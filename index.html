@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projet.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <title>Mon Restaurant</title>
+</head>
+<body>
+    <div class="container">
+        <header class="titre">
+            <div>
+                <img src="images/logo.png" alt="Mon resto"/>
+            </div>
+            <div>
+                <h3><i class="fa-solid fa-phone"></i>&nbsp;Appelez-nous: 003315821553</h3>
+            </div>
+
+        </header>
+        <section class="carrousel">
+            <div class="images" id="testimages">
+                <img class="slider-item" src="images/01.jpg"/>
+                <img class="slider-item" src="images/02.jpg"/>
+                <img class="slider-item" src="images/03.jpg"/>
+            </div>
+            <div class="Fleches">
+               <span><i id="gauche" class="fa-solid fa-arrow-left fa-2xl"></i></span>
+                <span><i id="droite" class="fa-solid fa-arrow-right fa-2xl"></i></span>
+            </div>
+        </section>
+        <nav>
+            <div id="toggle-btn"><i class="fa-solid fa-bars fa-2xl"></i></div>
+            <ul id="ulref">
+                <li>Réalisations</li>
+                <li>Entrées</li>
+                <li>Plats</li>
+                <li>Desserts</li>
+                <li>Boissons</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <section class="articles">
+            <article class="un">
+                <h5>Suggestion de la semaine</h5>
+                <p><b>- ENTREES</b></p>
+                <p>Tajine fassi.</p>
+                <p>Couscous fassi.</p>
+                <p>Pates au sauce blache avec parmezon.</p><br/>
+                <p><b>- PLATS</b></p>
+                <p>Tajine fassi.</p>
+                <p>Couscous fassi.</p>
+                <p>Pates au sauce blache avec parmezon.</p><br/>
+                <p><b>- DESSERTS</b></p>
+                <p>Tarte au fraises.</p>
+                <p>Crepe au chocolats.</p><br/>
+            </article>
+            <article class="deux">
+                <h4>Nous vous proposons un menu 3 services au choix</h4><br/>
+                <p>allez dur une table et commander ce que vous voulez !!!</p>
+                <p>Une entrée parmi la liste fournie</p>
+                <p>un plat principal</p>
+                <p>un dessert</p>
+                <button class="bouton"><i class="fa-solid fa-file"></i>&nbsp;RESERVEZ VOTRE TABLE</button>
+            </article>
+        </section>
+        <section class="temoignages">
+            <h2> Ce que nos Clients pensent de nous</h2>
+            <div class="temoignage_card">
+                <div class="card">
+                    <h5 class="name">khaled</h5>
+                    <p>Super trop bon n hésiter pas tester</p>
+                </div>
+                <div class="card">
+                    <h5 class="name">Imen</h5>
+                    <p>Super trop bon n hésiter pas tester</p>
+                </div>
+                <div class="card">
+                    <h5 class="name">toto</h5>
+                    <p>Super trop bon n hésiter pas tester</p>
+                </div>
+                <div class="card">
+                    <h5 class="name">Salma</h5>
+                    <p>Super trop bon n hésiter pas tester</p>
+                </div>
+                <div class="card">
+                    <h5 class="name">Fabrice</h5>
+                    <p>Super trop bon n hésiter pas tester</p>
+                </div>
+                <div class="card">
+                    <h5 class="name">Nicolas</h5>
+                    <p>Super trop bon n hésiter pas tester</p>
+                </div>
+            </div>
+            <button>Plus de témoignages Client ici</button>
+        </section>
+        <footer>
+            <p>Mon restaurant Numéro 002155323</p>
+        </footer>
+    </div>
+    <script>
+        // bouton Menu
+        const btn = document.querySelector('#toggle-btn');
+        const ul = document.getElementById('ulref');
+        btn.onclick = ()=> ul.style.opacity == 0 ? ul.style.opacity = 1 : ul.style.opacity = 0;
+
+        // Carroussel
+
+        const carrousel_content= document.getElementById('testimages');
+        const prev = document.getElementById('gauche');
+        const next = document.getElementById('droite');
+        let trans = 0;
+
+        prev.onclick = ()=>{
+            trans += 100;
+            if(trans > 0)
+                trans = -200;
+            carrousel_content.style.transform ='translateX(' + trans +'%)';
+        }
+
+        next.onclick = ()=>{
+            trans -= 100;
+            if(trans < -200)
+                trans = 0;
+            carrousel_content.style.transform ='translateX(' + trans +'%)';
+        }
+
+
+    </script>
+    
+</body>
+</html>
